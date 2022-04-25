@@ -1,0 +1,43 @@
+<%- include('partial/_util') -%>
+<%
+    parameters = {
+        title: 'Home',
+        description: 'Apache のエスケープされたパーセントエンコーディングをデコードするフォーム',
+        ogp: {
+            card: 'photo',
+            account: 'Bredtn_1et',
+            type: 'website',
+            image: 'https://source.unsplash.com/ymgOYi8mroc/1920x1080'
+        },
+        errFlag: false
+    }
+-%>
+<%- include('partial/_head', { parameters }) -%>
+<body>
+<%- include('partial/_header') -%>
+<main class="l-main">
+    <section class="container py-5">
+        <h1><i class="fa-solid fa-fw fa-terminal me-2" aria-hidden="true"></i><%= parameters.title %><small class="ml-2" id="hello"></small></h1>
+        <p class="mb-4"><%= parameters.description %></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="mt-3 mb-2">エンコード文字列</h2>
+                    <p>エンコードされた文字列を入力してください。</p>
+                    <p>テキストエリアからフォーカスが外れるとデコードします。</p>
+                    <textarea class="c-textarea" id="encodeText" placeholder="\xe3\x83\xbc"></textarea>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h2 class="mt-3 mb-2">デコード文字列</h2>
+                    <p>デコード文字列が出力されます。</p>
+                    <p>&nbsp;</p>
+                    <textarea class="c-textarea" id="decodeText" placeholder="ー"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%- include('partial/_footer') -%>
+<%- include('partial/_js_loader') -%>
+</body>
+</html>
